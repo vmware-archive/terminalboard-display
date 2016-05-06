@@ -6,6 +6,8 @@ ul {
 }
 
 .pipeline {
+  height: 52px;
+
   font: {
     size: 22px;
   }
@@ -29,13 +31,82 @@ ul {
       color: yellow;
     }
   }
+
+  div {
+    float: left;
+  }
 }
 
-.flapper .digit div {
-  color: #E50101;
-  background-color: #0F0F0F;
+.pipeline-name {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 body {
   background-color: #444;
+}
+
+.blinking-light {
+  display: inline-block;
+  width: 52px;
+  height: 100%;
+}
+
+.ring-container {
+    position: relative;
+
+    &.success {
+      .circle {
+        background-color: #62bd19;
+      }
+      .ringring {
+        border: 3px solid #62bd19;
+      }
+    }
+    &.failure {
+      .circle {
+        background-color: red;
+      }
+      .ringring {
+        border: 3px solid red;
+      }
+    }
+    &.stopped {
+      .circle {
+        background-color: yellow;
+      }
+      .ringring {
+        border: 3px solid yellow;
+      }
+    }
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    background-color: #716E6E;
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+}
+
+.ringring {
+    -webkit-border-radius: 30px;
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.0
+}
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
 }
