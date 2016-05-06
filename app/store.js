@@ -1,4 +1,3 @@
 module.exports = {
-  todoItems: [],
-  users: []
+  pipelines: []
 };

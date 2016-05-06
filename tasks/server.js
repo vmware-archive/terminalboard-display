@@ -29,9 +29,9 @@ gulp.task('wait-for-server', function(callback) {
 });
 
 gulp.task('watch-server', function() {
-  gulp.watch(['server/**/*.js', 'helpers/**/*.js', 'lib/**/*.js', 'config/*.json'], ['server']);
+  gulp.watch(['server/**/*.js', 'helpers/**/*.js', 'lib/**/*.js', 'config/*.json'], ['clean', 'server']);
 });
 
-gulp.task('s', ['server', 'watch-server', 'assets-config']);
+gulp.task('s', ['clean', 'server', 'watch-server', 'assets-config']);
 
 module.exports = {restartServer, killServer};

@@ -17,13 +17,6 @@ class Application extends React.Component {
     const {config, store, router} = this.props;
     return (
       <div className="pui-react-starter">
-        <a href="todoList" onClick={e => {e.preventDefault(); router.navigate('/todoList');}}>Todo List!</a>
-        <br/>
-        <a href="apiPage" onClick={e => {e.preventDefault(); router.navigate('/apiPage');}}>Page that hits an api</a>
-        <br/>
-        <a href="createNewUser" onClick={e => {e.preventDefault(); router.navigate('/users/new');}}>Create New User</a>
-        <br/>
-        <a href="userList" onClick={e => {e.preventDefault(); router.navigate('/users/list');}}> All Users</a>
         <Router {...{router, config, ...store}}/>
       </div>
     );

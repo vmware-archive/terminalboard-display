@@ -1,9 +1,7 @@
 const React = require('react');
 const types = require('react').PropTypes;
-const ApiPage = require('./api_page');
-const UserCreatePage = require('./user_create_page');
-const UserListPage = require('./user_list_page');
-const TodoPage = require('./todo_page');
+const PipelinesPage = require('./pipelines_page');
+const {Actions} = require('p-flux');
 
 function isObject(obj) {
   return typeof obj === 'object';
@@ -22,24 +20,20 @@ function toFlattenedRoutes(routesHash) {
 }
 
 const routes = {
-  '/': 'todoList',
-  '/todoList': 'todoList',
-  '/apiPage': 'apiPage',
-  '/users': {
-    '/list': 'showUsers',
-    '/new': 'createUser'
-  }
+  '/': 'pipelines',
+  '/pipelines': 'pipelines'
 };
 
 class Router extends React.Component {
   static propTypes = {
-    router: types.oneOfType([types.object, types.func])
+    router: types.oneOfType([types.object, types.func]),
+    config: types.object
   };
 
   constructor(props, context) {
     super(props, context);
     const {state} = this;
-    this.state = {...state, Page: TodoPage };
+    this.state = {...state, Page: PipelinesPage };
   }
 
   componentDidMount() {
@@ -48,21 +42,12 @@ class Router extends React.Component {
       router.get(path, this[callbackName]);
     });
   }
-
-  apiPage = () => {
-    this.setState({Page: ApiPage});
-  };
-
-  todoList = () => {
-    this.setState({Page: TodoPage});
-  };
-
-  showUsers = () => {
-    this.setState({Page: UserListPage});
-  };
-
-  createUser = () => {
-    this.setState({Page: UserCreatePage});
+  pipelines = () => {
+    console.log('re-rendering page');
+    const {config} = this.props;
+    Actions.pipelinesFetch({backendURL: config.backendURL});
+    Actions.pipelinesUpdatePeriodcally({backendURL: config.backendURL, interval: 5000});
+    this.setState({Page: PipelinesPage});
   };
 
   render() {

@@ -7,6 +7,20 @@ const {useWebpackDevMiddleware} = config;
 module.exports = function() {
   const app = express();
 
+  app.get('/api/pipeline_statuses', function (req, res) {
+    res.send(JSON.stringify([
+    {
+      pipelineName: 'some-pipeline',
+        pipelineStatus: 'GREEN',
+      currentlyRunning: true
+    },
+    {
+      pipelineName: 'another-pipeline',
+        pipelineStatus: 'RED',
+      currentlyRunning: false
+    }
+    ]));
+  });
 
   if (useWebpackDevMiddleware) {
     const webpackHotMiddleware = require('pui-react-tools/middleware/webpack');

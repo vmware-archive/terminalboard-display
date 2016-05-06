@@ -1,4 +1,4 @@
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
-gulp.task('default', cb => runSequence('lint', 'spec-app', 'spec-integration', cb));
+gulp.task('default', cb => runSequence('lint', 'spec-app', cb));

@@ -1,9 +1,9 @@
 require('../spec_helper');
 
-describe('TodoList', () => {
+describe('PipelineList', () => {
   beforeEach(() => {
-    const TodoList = require('../../../app/components/todo_list');
-    ReactDOM.render(<TodoList todoItems={['do this', 'do that']} />, root);
+    const PipelineList = require('../../../app/components/pipeline_list');
+    ReactDOM.render(<PipelineList todoItems={['do this', 'do that']} />, root);
   });
 
   it('renders the todolist', () => {

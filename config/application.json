@@ -1,6 +1,7 @@
 {
   "globalNamespace": "MyReactStarter",
-  "title": "My React Starter",
+  "title": "Concourse Terminal Board",
+  "backendURL": "http://terminalboard.cfapps.io",
   "scripts": [
     "application.js"
   ],

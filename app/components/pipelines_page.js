@@ -1,25 +1,23 @@
 const React = require('react');
 const types = require('react').PropTypes;
 const TodoAdder = require('./todo_adder');
-const TodoList = require('./todo_list');
+const PipelineList = require('./pipeline_list');
 
-class TodoPage extends React.Component {
+class PipelinesPage extends React.Component {
   static propTypes = {
     config: types.object,
-    todoItems: types.array
+    pipelines: types.array
   };
 
   render() {
-    const {config: {title}, todoItems} = this.props;
+    const {config: {title}, pipelines} = this.props;
     return (
       <div className="todo-page">
         <h3 className="title">{title}</h3>
-        <h3>Things to do</h3>
-        <TodoAdder/>
-        <TodoList todoItems={todoItems}/>
+        <PipelineList pipelines={pipelines}/>
       </div>
     );
   }
 }
 
-module.exports = TodoPage;
+module.exports = PipelinesPage;
