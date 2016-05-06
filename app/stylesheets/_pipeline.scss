@@ -1,0 +1,30 @@
+.pipeline {
+  height: 50px;
+  background: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font: {
+    size: 22px;
+  }
+
+  list-style: none;
+
+  &.success {
+    color: green;
+  }
+
+  &.failure {
+    color: red;
+  }
+
+  &.stopped {
+    color: yellow;
+  }
+}
+
+
+.flapper .digit div {
+  color: #E50101;
+  background-color: #0F0F0F;
+}

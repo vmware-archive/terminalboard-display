@@ -12,7 +12,7 @@ module.exports = {
     const acceptHeaders = {accept: 'application/json', 'Content-Type': 'application/json'};
     //const authorizationHeaders = accessToken ? {authorization: `Bearer ${accessToken}`} : {};
     //options = {credentials: 'same-origin', headers: {...acceptHeaders, ...authorizationHeaders, ...headers}, ...options};
-    options = {credentials: 'same-origin', headers: {...acceptHeaders, ...headers}, ...options};
+    options = {method: "GET", mode: 'cors', headers: {...acceptHeaders, ...headers}};
     return fetch(url, options)
       .then(checkStatus)
       .then(response => [204, 304].includes(response.status) ? {} : response.json());

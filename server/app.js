@@ -11,12 +11,12 @@ module.exports = function() {
     res.send(JSON.stringify([
     {
       pipelineName: 'some-pipeline',
-        pipelineStatus: 'GREEN',
+      pipelineStatus: 'success',
       currentlyRunning: true
     },
     {
       pipelineName: 'another-pipeline',
-        pipelineStatus: 'RED',
+      pipelineStatus: 'failure',
       currentlyRunning: false
     }
     ]));
