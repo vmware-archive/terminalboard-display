@@ -68,7 +68,7 @@ class FlapDigits extends React.Component {
   componentDidMount() {
     const node = ReactDOM.findDOMNode(this);
     const flapperOptions = {
-      width: 40,
+      width: 30,
       align: 'left',
       timing: 100
     };
