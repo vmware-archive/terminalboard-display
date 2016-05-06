@@ -3,7 +3,7 @@
   "title": "Concourse Terminal Board",
   "backendURL": "http://terminalboard.cfapps.io",
   "scripts": [
-    "application.js"
+    "jquery.min.js","jquery.transform-0.9.3.min.js","jquery.flapper.js","application.js"
   ],
   "stylesheets": [
     "application.css"

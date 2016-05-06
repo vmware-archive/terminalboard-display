@@ -22,6 +22,10 @@ module.exports = function() {
     ]));
   });
 
+  // TODO: disable this when useWebpackDevMiddleware is true
+  app.use(express.static(path.join(__dirname, '..', 'public')));
+  app.use(express.static(path.join(__dirname, '..', 'vendor')));
+
   if (useWebpackDevMiddleware) {
     const webpackHotMiddleware = require('pui-react-tools/middleware/webpack');
     app.use(...webpackHotMiddleware());

@@ -5,15 +5,13 @@ const PipelineList = require('./pipeline_list');
 
 class PipelinesPage extends React.Component {
   static propTypes = {
-    config: types.object,
     pipelines: types.array
   };
 
   render() {
-    const {config: {title}, pipelines} = this.props;
+    const {pipelines} = this.props;
     return (
-      <div className="todo-page">
-        <h3 className="title">{title}</h3>
+      <div>
         <PipelineList pipelines={pipelines}/>
       </div>
     );

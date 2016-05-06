@@ -1,8 +1,8 @@
 const gulp = require('gulp');
-var del = require('del');
+const del = require('del');
 
 gulp.task('clean', () => {
   return del([
     'public/'
-  ])
+  ]);
 });
