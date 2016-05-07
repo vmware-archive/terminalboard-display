@@ -36,7 +36,7 @@ class FlapRow extends React.Component {
 
 class BlinkingLight extends React.Component {
   static propTypes = {
-    currentlyRunning: types.string.isRequired,
+    currentlyRunning: types.bool.isRequired,
     pipelineStatus: types.string.isRequired
   };
 
