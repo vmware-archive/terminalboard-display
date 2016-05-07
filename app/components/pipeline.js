@@ -11,8 +11,13 @@ class Pipeline extends React.Component {
     url: types.string.isRequired
   };
 
+  componentWillReceiveProps(newProps) {
+    this.update = newProps.currentlyRunning != this.props.currentlyRunning;
+  }
+
   render() {
     const {pipelineName, pipelineStatus, currentlyRunning, url} = this.props;
+    const update = this.update || false;
     const classes = classnames('pipeline', pipelineStatus);
     return (
       <li className={classes}>
@@ -26,14 +31,15 @@ class Pipeline extends React.Component {
 
 class FlapRow extends React.Component {
   static propTypes = {
-    text: types.string.isRequired
+    text: types.string.isRequired,
+    update: types.bool.isRequired
   };
 
   render() {
-    const {text} = this.props;
+    const {text, update} = this.props;
     const paddedText = `  ${text}`;
     return(<div>
-      <FlapDigits text={paddedText}/>
+      <FlapDigits text={paddedText} update={update}/>
     </div>);
   };
 }
@@ -66,7 +72,8 @@ class BlinkingLight extends React.Component {
 
 class FlapDigits extends React.Component {
   static propTypes = {
-    text: types.string.isRequired
+    text: types.string.isRequired,
+    update: types.bool.isRequired
   };
 
   componentDidMount() {
@@ -80,8 +87,10 @@ class FlapDigits extends React.Component {
   };
 
   componentWillReceiveProps(newProps) {
-    const {text} = newProps;
-    this.flapper.val(text).change();
+    if(newProps.update){
+      this.flapper.val('').change();
+    }
+    this.flapper.val(newProps.text).change();
   };
 
 
