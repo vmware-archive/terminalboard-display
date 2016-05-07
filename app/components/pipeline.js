@@ -12,7 +12,7 @@ class Pipeline extends React.Component {
   };
 
   componentWillReceiveProps(newProps) {
-    this.update = newProps.currentlyRunning != this.props.currentlyRunning;
+    this.update = newProps.currentlyRunning !== this.props.currentlyRunning;
   }
 
   render() {
@@ -22,7 +22,7 @@ class Pipeline extends React.Component {
     return (
       <li className={classes}>
         <a href={url} target="_blank">
-          <BlinkingLight pipelineStatus={pipelineStatus} currentlyRunning={currentlyRunning} /><FlapRow text={pipelineName} />
+          <BlinkingLight pipelineStatus={pipelineStatus} currentlyRunning={currentlyRunning} /><FlapRow text={pipelineName} update={update} />
         </a>
       </li>
     );
@@ -53,11 +53,11 @@ class BlinkingLight extends React.Component {
   render() {
     const {currentlyRunning, pipelineStatus} = this.props;
 
-    const containerClasses = classnames("blinking-light", "ring-container", pipelineStatus);
+    const containerClasses = classnames('blinking-light', 'ring-container', pipelineStatus);
 
-    var ringClass = "";
+    var ringClass = '';
     if (currentlyRunning === true) {
-      ringClass = "ringring"
+      ringClass = "ringring";
     }
 
     return(
