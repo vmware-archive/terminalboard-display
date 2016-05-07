@@ -1,5 +1,6 @@
 {
   "stylesheets": [],
+  "backendURL": "",
   "hotModule": true,
   "useWebpackDevMiddleware": true
 }

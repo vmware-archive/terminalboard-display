@@ -15,11 +15,11 @@ class Pipeline extends React.Component {
     const {pipelineName, pipelineStatus, currentlyRunning, url} = this.props;
     const classes = classnames('pipeline', pipelineStatus);
     return (
-      <a href={url} target="_blank">
-        <li className={classes}>
+      <li className={classes}>
+        <a href={url} target="_blank">
           <BlinkingLight pipelineStatus={pipelineStatus} currentlyRunning={currentlyRunning} /><FlapRow text={pipelineName} />
-        </li>
-      </a>
+        </a>
+      </li>
     );
   }
 }

@@ -12,12 +12,14 @@ module.exports = function() {
     {
       pipelineName: 'some-pipeline',
       pipelineStatus: 'success',
-      currentlyRunning: true
+      currentlyRunning: true,
+      url: 'http://yahoo.com'
     },
     {
       pipelineName: 'another-pipeline',
       pipelineStatus: 'failure',
-      currentlyRunning: false
+      currentlyRunning: false,
+      url: 'http://yahoo.com'
     }
     ]));
   });
