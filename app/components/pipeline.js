@@ -7,16 +7,19 @@ class Pipeline extends React.Component {
   static propTypes = {
     pipelineName: types.string.isRequired,
     pipelineStatus: types.string.isRequired,
-    currentlyRunning: types.bool.isRequired
+    currentlyRunning: types.bool.isRequired,
+    url: types.string.isRequired
   };
 
   render() {
-    const {pipelineName, pipelineStatus, currentlyRunning} = this.props;
+    const {pipelineName, pipelineStatus, currentlyRunning, url} = this.props;
     const classes = classnames('pipeline', pipelineStatus);
     return (
-      <li className={classes}>
-        <BlinkingLight pipelineStatus={pipelineStatus} currentlyRunning={currentlyRunning} /><FlapRow text={pipelineName} />
-      </li>
+      <a href={url} target="_blank">
+        <li className={classes}>
+          <BlinkingLight pipelineStatus={pipelineStatus} currentlyRunning={currentlyRunning} /><FlapRow text={pipelineName} />
+        </li>
+      </a>
     );
   }
 }

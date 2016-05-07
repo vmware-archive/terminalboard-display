@@ -11,7 +11,7 @@ class PipelineList extends React.Component {
     const {pipelines} = this.props;
 
     const pipelinesList = pipelines.map((item, index) => (
-      <Pipeline pipelineName={item.pipelineName} pipelineStatus={item.pipelineStatus} currentlyRunning={item.currentlyRunning} key={index}/>
+      <Pipeline pipelineName={item.pipelineName} pipelineStatus={item.pipelineStatus} currentlyRunning={item.currentlyRunning} url={item.url} key={index}/>
     ));
 
     return (
