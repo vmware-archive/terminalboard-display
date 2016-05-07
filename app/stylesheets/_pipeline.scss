@@ -6,7 +6,7 @@ ul {
 }
 
 .pipeline {
-  height: 52px;
+  height: 62px;
 
   font: {
     size: 22px;
@@ -31,10 +31,6 @@ ul {
       color: yellow;
     }
   }
-
-  div {
-    float: left;
-  }
 }
 
 .pipeline-name {
@@ -50,9 +46,13 @@ body {
 }
 
 .blinking-light {
+  float: left;
+  position: relative;
   display: inline-block;
   width: 52px;
   height: 100%;
+  margin-right: -48px;
+  z-index: 9000;
 }
 
 .ring-container {

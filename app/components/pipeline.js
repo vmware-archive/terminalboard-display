@@ -31,8 +31,9 @@ class FlapRow extends React.Component {
 
   render() {
     const {text} = this.props;
+    const paddedText = `  ${text}`;
     return(<div>
-      <FlapDigits {...{text}}/>
+      <FlapDigits text={paddedText}/>
     </div>);
   };
 }
