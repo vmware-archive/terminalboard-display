@@ -46,7 +46,7 @@ afterAll(() => {
 });
 
 beforeEach(() => {
-  global.MyReactStarter = {config: {}};
+  global.TerminalBoard = {config: {}};
 
   $('body').find('#root').remove().end().append('<div id="root"/>');
   Cursor.async = false;

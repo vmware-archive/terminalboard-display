@@ -11,15 +11,7 @@ describe('Application', () => {
     ReactDOM.render(<Application {...{config, Dispatcher}}/>, root);
   });
 
-  it('has a TodoAdder', () => {
-    expect('.todo-adder').toExist();
-  });
-
   it('has a PipelineList', () => {
-    expect('.todo-list').toExist();
-  });
-
-  it('has a title', () => {
-    expect('.title').toHaveText('title');
+    expect('.pipeline-list').toExist();
   });
 });

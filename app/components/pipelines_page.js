@@ -1,6 +1,5 @@
 const React = require('react');
 const types = require('react').PropTypes;
-const TodoAdder = require('./todo_adder');
 const PipelineList = require('./pipeline_list');
 
 class PipelinesPage extends React.Component {

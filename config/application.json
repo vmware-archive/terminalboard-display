@@ -1,5 +1,5 @@
 {
-  "globalNamespace": "MyReactStarter",
+  "globalNamespace": "TerminalBoard",
   "title": "Concourse Terminal Board",
   "backendURL": "http://terminalboard.cfapps.io",
   "scripts": [
