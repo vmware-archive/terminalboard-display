@@ -1,5 +1,5 @@
 ---
 applications:
-  - name: react-starter
+  - name: terminalboard-ui
     path: public
     memory: 64MB
