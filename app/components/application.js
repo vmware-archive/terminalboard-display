@@ -29,7 +29,6 @@ const EnhancedApplication = useStore(useRouter(Application),
     actions: [],
     dispatcherHandlers: [
       require('../dispatchers/main_dispatcher'),
-      require('../dispatchers/api_dispatcher')
     ],
     /* eslint-disable no-console */
     onDispatch: (event) => {console.info('dispatching event', event);}
