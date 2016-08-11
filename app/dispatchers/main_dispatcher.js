@@ -7,13 +7,10 @@ const MainDispatcher = {
       this.$store.refine('pipelines').set(pipelineData);
     });
   },
-  pipelinesUpdatePeriodcally({data}) {
-    const {backendURL, interval} = data;
+  pipelinesUpdatePeriodically({data}) {
+    const {interval} = data;
     window.setInterval(() => {
-      // TODO: CALL pipelinesFetch() instead
-      Api.getPipelines(backendURL).then((pipelineData) => {
-        this.$store.refine('pipelines').set(pipelineData);
-      });
+      this.dispatch({type: 'pipelinesFetch', data: data});
     }, interval);
   },
   setRoute({data}) {

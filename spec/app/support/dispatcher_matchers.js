@@ -41,14 +41,16 @@ beforeEach(() => {
   jasmine.addMatchers({
     toHaveBeenDispatched(){
       return {
-        compare(actual){
-          const pass = Dispatcher.dispatch.calls.all().find((dispatchCall) => {
+        compare(actual, count = 1){
+          const matching = Dispatcher.dispatch.calls.all().filter((dispatchCall) => {
             return dispatchCall.args[0].type === actual;
           });
 
           const allDispatchers = Dispatcher.dispatch.calls.all().map((dispatchCall) => {
             return dispatchCall.args[0].type;
           });
+
+          const pass = matching.length == count;
 
           let message;
           if (pass) {
