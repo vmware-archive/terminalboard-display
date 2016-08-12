@@ -57,7 +57,7 @@ class BlinkingLight extends React.Component {
 
     var ringClass = '';
     if (currentlyRunning === true) {
-      ringClass = "ringring";
+      ringClass = 'ringring';
     }
 
     return(

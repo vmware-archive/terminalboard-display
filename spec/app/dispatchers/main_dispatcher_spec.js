@@ -32,8 +32,8 @@ describe('MainDispatcher', () => {
       const request = jasmine.Ajax.requests.mostRecent();
       request.succeed('foo');
       MockPromises.tick(numResolvingPromiseTicks);
-      expect(cursorSpy).toHaveBeenCalledWith({pipelines: 'foo'})
-    })
+      expect(cursorSpy).toHaveBeenCalledWith({pipelines: 'foo'});
+    });
   });
 
   describe('pipelinesUpdatePeriodically', () => {
@@ -53,6 +53,6 @@ describe('MainDispatcher', () => {
       jasmine.clock().tick(interval + 1);
       expect('pipelinesFetch').toHaveBeenDispatched(2);
       expect('pipelinesFetch').toHaveBeenDispatchedWith({data: {backendURL: 'https://example.com', interval: interval}});
-    })
-  })
+    });
+  });
 });

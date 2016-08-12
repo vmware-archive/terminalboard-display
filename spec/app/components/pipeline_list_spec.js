@@ -34,7 +34,7 @@ describe('PipelineList', () => {
 
     var children = result.props.children;
     expect(children).toHaveLength(2);
-    expect(children[0].props.pipelineName).toEqual("bar");
-    expect(children[1].props.pipelineName).toEqual("baz");
-  })
+    expect(children[0].props.pipelineName).toEqual('bar');
+    expect(children[1].props.pipelineName).toEqual('baz');
+  });
 });
