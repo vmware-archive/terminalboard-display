@@ -50,7 +50,7 @@ beforeEach(() => {
             return dispatchCall.args[0].type;
           });
 
-          const pass = matching.length == count;
+          const pass = matching.length === count;
 
           let message;
           if (pass) {

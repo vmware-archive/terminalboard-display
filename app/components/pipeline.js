@@ -55,7 +55,7 @@ class BlinkingLight extends React.Component {
 
     const containerClasses = classnames('blinking-light', 'ring-container', pipelineStatus);
 
-    var ringClass = '';
+    let ringClass = '';
     if (currentlyRunning === true) {
       ringClass = 'ringring';
     }

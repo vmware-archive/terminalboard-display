@@ -2,7 +2,7 @@ require('../spec_helper');
 const ReactTestUtils = require('react-addons-test-utils');
 
 describe('PipelineList', () => {
-  var renderer;
+  let renderer;
   beforeEach(() => {
     const PipelineList = require('../../../app/components/pipeline_list');
 
@@ -30,9 +30,9 @@ describe('PipelineList', () => {
   });
 
   it('renders anything other than successful builds', () => {
-    var result = renderer.getRenderOutput();
+    const result = renderer.getRenderOutput();
 
-    var children = result.props.children;
+    const children = result.props.children;
     expect(children).toHaveLength(2);
     expect(children[0].props.pipelineName).toEqual('bar');
     expect(children[1].props.pipelineName).toEqual('baz');

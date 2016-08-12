@@ -43,7 +43,6 @@ class Router extends React.Component {
     });
   }
   pipelines = () => {
-    console.log('re-rendering page');
     const {config} = this.props;
     Actions.pipelinesFetch({backendURL: config.backendURL});
     Actions.pipelinesUpdatePeriodically({backendURL: config.backendURL, interval: 15000});
