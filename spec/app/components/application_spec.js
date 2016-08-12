@@ -12,6 +12,6 @@ describe('Application', () => {
   });
 
   it('has a PipelineList', () => {
-    expect('.pipeline-list').toExist();
+    expect(PipelineList.prototype.render).toHaveBeenCalled()
   });
 });

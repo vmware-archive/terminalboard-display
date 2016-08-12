@@ -17,7 +17,7 @@ module.exports = function() {
     },
     {
       pipelineName: 'another-pipeline',
-      pipelineStatus: 'failure',
+      pipelineStatus: 'success',
       currentlyRunning: false,
       url: 'http://yahoo.com'
     }

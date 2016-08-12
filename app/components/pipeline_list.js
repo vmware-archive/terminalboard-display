@@ -1,5 +1,6 @@
 const React = require('react');
 const Pipeline = require('./pipeline');
+const Gif = require('./gif');
 const types = React.PropTypes;
 
 class PipelineList extends React.Component {
@@ -16,11 +17,15 @@ class PipelineList extends React.Component {
       <Pipeline pipelineName={item.pipelineName} pipelineStatus={item.pipelineStatus} currentlyRunning={item.currentlyRunning} url={item.url} key={index}/>
     ));
 
-    return (
-      <ul className="pipeline-list">
-        {pipelinesList}
-      </ul>
-    );
+    if (pipelinesList.length === 0) {
+      return <Gif />
+    } else {
+      return (
+        <ul className="pipeline-list">
+          {pipelinesList}
+        </ul>
+      );
+    }
   }
 }
 
