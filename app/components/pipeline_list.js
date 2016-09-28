@@ -12,7 +12,7 @@ class PipelineList extends React.Component {
     const {pipelines} = this.props;
 
     const pipelinesList = pipelines.filter((item) => (
-      item.pipelineStatus !== 'success'
+      item.pipelineStatus !== 'success' || item.currentlyRunning
     )).map((item, index) => (
       <Pipeline pipelineName={item.pipelineName} pipelineStatus={item.pipelineStatus} currentlyRunning={item.currentlyRunning} url={item.url} key={index}/>
     ));
